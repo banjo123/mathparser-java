@@ -112,10 +112,4 @@ public class ParserTest {
 		Assert.assertArrayEquals(expected, obtainOutputTokensByParserArray("3 + 4 * 2 / ( 1 - 5 ) ^ 2 ^ 3"));
 	}
 
-	@Test
-	public void testExpression03() {
-		String[] expected = { "5", "1", "2", "+", "4", "*", "+", "3", "-" };
-		Assert.assertArrayEquals(expected, obtainOutputTokensByParserArray("5 + ((1 + 2) * 4) - 3"));
-	}
-
 }
