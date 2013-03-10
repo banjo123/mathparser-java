@@ -1,5 +1,7 @@
 package com.xsoft.science.mathparser.constants.utils;
 
+import com.xsoft.science.mathparser.constants.OperatorConstants;
+
 /*
  MathParser Java - Cross Platform Mathematical Expressions Parser
  Copyright 2013 Rodríguez Hernández, Daniel.
@@ -18,11 +20,10 @@ package com.xsoft.science.mathparser.constants.utils;
  */
 
 public class MathParserUtils {
+	
 	public static boolean tokenIsNumber(String token) {
 		try {
-			Double.parseDouble(token.replace(
-					MathParserConstants.DEFAULT_DECIMAL_SEPARATOR,
-					MathParserConstants.DEFAULT_JAVA_DECIMAL_SEPARATOR));
+			Double.parseDouble(token.replace(OperatorConstants.DEFAULT_DECIMAL_SEPARATOR, OperatorConstants.DEFAULT_JAVA_DECIMAL_SEPARATOR));
 			return true;
 		} catch (NumberFormatException e) {
 			return false;
