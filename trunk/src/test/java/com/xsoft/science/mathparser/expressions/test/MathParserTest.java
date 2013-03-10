@@ -196,5 +196,40 @@ public class MathParserTest {
 		result = mathParser.calculate("5*2^4+4*2^2-6*2+4");
 		Assert.assertEquals(88.0, result.doubleValue(), 0.0);
 	}
-
+	
+	@Test
+	public void calculation028() {
+		result = mathParser.calculate("3^3*3^4*3");
+		Assert.assertEquals(6561.0, result.doubleValue(), 0.0);
+	}
+	
+	@Test
+	public void calculation029() {
+		result = mathParser.calculate("5^7/5^3");
+		Assert.assertEquals(625.0, result.doubleValue(), 0.0);
+	}
+	
+	@Test
+	public void calculation030() {
+		result = mathParser.calculate("(5^3)^4");
+		Assert.assertEquals(244140625.0, result.doubleValue(), 0.0);
+	}
+	
+	@Test
+	public void calculation031() {
+		result = mathParser.calculate("(5*2*3)^4");
+		Assert.assertEquals(810000.0, result.doubleValue(), 0.0);
+	}
+	
+	@Test
+	public void calculation032() {
+		result = mathParser.calculate("(3^4)^4");
+		Assert.assertEquals(43046721.0, result.doubleValue(), 0.0);
+	}
+	
+	@Test
+	public void calculation033() {
+		result = mathParser.calculate("(((2-1/5)^2)/((3-2/9)^(-1))) / (((6/7)*(5/4)-(2/7)/(1/2))^3)/((1/2)-(1/3)*(1/4)/(1/5))-5(1/7)");
+		Assert.assertEquals(863.2857142, result.doubleValue(), 0.0000001);
+	}
 }
