@@ -1,5 +1,22 @@
 package com.xsoft.science.mathparser.parser;
 
+/*
+ MathParser Java - Cross Platform Mathematical Expressions Parser
+ Copyright 2013 Rodríguez Hernández, Daniel.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ */
+
 import com.xsoft.science.mathparser.constants.OperatorConstants;
 import com.xsoft.science.mathparser.constants.utils.MathParserUtils;
 import com.xsoft.science.mathparser.factories.Factories;
@@ -12,12 +29,9 @@ import com.xsoft.science.mathparser.tokenStructure.TokenStructureFactory;
 
 public class Parser {
 
-	private final ParserFactory parserFactory = Factories
-			.getParserFactoryInstance();
-	private final ExceptionFactory exceptionFactory = Factories
-			.getExceptionFactoryInstance();
-	private final LexicalTokenizer lexicalTokenizer = parserFactory
-			.createLexicalTokenizer();
+	private final ParserFactory parserFactory = Factories.getParserFactoryInstance();
+	private final ExceptionFactory exceptionFactory = Factories.getExceptionFactoryInstance();
+	private final LexicalTokenizer lexicalTokenizer = parserFactory.createLexicalTokenizer();
 
 	private String expression;
 	private TokenQueue tokensQueue;
@@ -28,9 +42,6 @@ public class Parser {
 
 	private String actualToken;
 	private int pointer;
-
-	public Parser() {
-	}
 
 	public void setExpression(String expression) {
 		this.expression = expression;
@@ -60,9 +71,9 @@ public class Parser {
 			if (tokenIsNumber()) {
 				addTokenToOutputQueue();
 			} else if (tokenIsFunction()) {
-
+				//TODO V1.1.0
 			} else if (tokenIsArgumentSeparator()) {
-
+				//TODO V1.1.0
 			} else if (tokenIsLeftParentheses()) {
 				pushActualOpToOperatorsStack();
 			} else if (tokenIsRightParentheses()) {
@@ -105,8 +116,7 @@ public class Parser {
 
 	private void popOpToOutputUntilFindLeftParentheses() {
 		try {
-			while (operatorStack.hasMoreElements()
-					&& !OperatorUtils.isAParentheses(operatorStack.getTop())) {
+			while (operatorStack.hasMoreElements() && !OperatorUtils.isAParentheses(operatorStack.getTop())) {
 				addTokenIfIsNotLeftParentheses(operatorStack.pop());
 			}
 			removeLeftParenthesesFromTheTopOfTheStack();
@@ -117,28 +127,24 @@ public class Parser {
 	}
 
 	private void removeLeftParenthesesFromTheTopOfTheStack() {
-		if (operatorStack.hasMoreElements()
-				&& OperatorUtils.isAParentheses(operatorStack.getTop())) {
+		if (operatorStack.hasMoreElements() && OperatorUtils.isAParentheses(operatorStack.getTop())) {
 			operatorStack.pop();
 		}
 	}
 
 	private void addTokenIfIsNotLeftParentheses(String operatorCandidate) {
-		if (!operatorCandidate.equals(OperatorConstants.LEFT_PARENTHESES
-				.getSymbol())) {
+		if (!operatorCandidate.equals(OperatorConstants.LEFT_PARENTHESES.getSymbol())) {
 			outputTokensQueue.addToken(operatorCandidate);
 		}
 
 	}
 
 	private boolean tokenIsRightParentheses() {
-		return actualToken.equals(OperatorConstants.RIGHT_PARENTHESES
-				.getSymbol());
+		return actualToken.equals(OperatorConstants.RIGHT_PARENTHESES.getSymbol());
 	}
 
 	private boolean tokenIsLeftParentheses() {
-		return actualToken.equals(OperatorConstants.LEFT_PARENTHESES
-				.getSymbol());
+		return actualToken.equals(OperatorConstants.LEFT_PARENTHESES.getSymbol());
 	}
 
 	private void pushActualOpToOperatorsStack() {
@@ -152,18 +158,15 @@ public class Parser {
 	}
 
 	private boolean isPrecedenceLess() {
-		int comparation = OperatorUtils.comparePrecedence(actualToken,
-				operatorStack.getTop());
+		int comparation = OperatorUtils.comparePrecedence(actualToken, operatorStack.getTop());
 		boolean precedenceLess = comparation < 0;
 		return precedenceLess;
 	}
 
 	private boolean isLeftAssociativeAndPrecedenceLessOrEquals() {
-		boolean isLeftAssociative = OperatorUtils
-				.isLeftAssociativity(actualToken);
+		boolean isLeftAssociative = OperatorUtils.isLeftAssociativity(actualToken);
 
-		int comparation = OperatorUtils.comparePrecedence(actualToken,
-				operatorStack.getTop());
+		int comparation = OperatorUtils.comparePrecedence(actualToken, operatorStack.getTop());
 		boolean precedenceLessOrEquals = comparation <= 0;
 
 		return isLeftAssociative && precedenceLessOrEquals;
@@ -178,12 +181,12 @@ public class Parser {
 	}
 
 	private boolean tokenIsArgumentSeparator() {
-		// TODO Auto-generated method stub
+		// TODO V1.1.0
 		return false;
 	}
 
 	private boolean tokenIsFunction() {
-		// TODO Auto-generated method stub
+		// TODO V1.1.0
 		return false;
 	}
 
