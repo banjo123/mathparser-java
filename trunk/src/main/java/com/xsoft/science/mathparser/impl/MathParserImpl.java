@@ -1,5 +1,22 @@
 package com.xsoft.science.mathparser.impl;
 
+/*
+ MathParser Java - Cross Platform Mathematical Expressions Parser
+ Copyright 2013 Rodríguez Hernández, Daniel.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ */
+
 import com.xsoft.science.mathparser.MathParser;
 import com.xsoft.science.mathparser.factories.Factories;
 import com.xsoft.science.mathparser.parser.Parser;
@@ -10,7 +27,7 @@ public class MathParserImpl implements MathParser {
 
 	private RPNCalculator rpnCalculator = Factories.getCalculatorFactoryInstance().createRPNCalculator();
 	private Parser parser = Factories.getParserFactoryInstance().createParser();
-	private Result result = Factories.getCalculatorFactoryInstance().createResult();;
+	private Result result = Factories.getCalculatorFactoryInstance().createResult();
 
 	public Result calculate(String expression) {
 		parser.setExpression(expression);
