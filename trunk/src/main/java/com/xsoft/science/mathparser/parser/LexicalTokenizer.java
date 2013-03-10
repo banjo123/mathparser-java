@@ -1,5 +1,22 @@
 package com.xsoft.science.mathparser.parser;
 
+/*
+ MathParser Java - Cross Platform Mathematical Expressions Parser
+ Copyright 2013 Rodríguez Hernández, Daniel.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ */
+
 import com.xsoft.science.mathparser.constants.OperatorConstants;
 import com.xsoft.science.mathparser.constants.utils.MathParserUtils;
 import com.xsoft.science.mathparser.factories.Factories;
@@ -12,10 +29,8 @@ import com.xsoft.science.mathparser.validators.ValidatorsFactory;
 
 public class LexicalTokenizer {
 
-	private Validator expressionValidator = ValidatorsFactory
-			.createExpressionValidator();
-	private ExceptionFactory exceptionFactory = Factories
-			.getExceptionFactoryInstance();
+	private Validator expressionValidator = ValidatorsFactory.createExpressionValidator();
+	private ExceptionFactory exceptionFactory = Factories.getExceptionFactoryInstance();
 	private TokenQueue tokens;
 
 	private String expression;
@@ -49,8 +64,7 @@ public class LexicalTokenizer {
 	}
 
 	private void transformGropCharsIntoParentheses() {
-		this.expression = MathParserUtils
-				.transformGropCharsIntoParentheses(this.expression);
+		this.expression = MathParserUtils.transformGropCharsIntoParentheses(this.expression);
 	}
 
 	private void trimExpression() {
@@ -74,27 +88,24 @@ public class LexicalTokenizer {
 	}
 
 	private void addConversorsForPositiveModificators() {
-		expression = (expression.startsWith("+")) ? "(0+1)*".concat(expression
-				.substring(1, expression.length())) : expression;
+		expression = (expression.startsWith("+")) ? "(0+1)*".concat(expression.substring(1, expression.length())) : expression;
 		expression = expression.replace("(+", "((0+1)*");
 	}
 
 	private void addConversorsForNegativeModificators() {
-		expression = (expression.startsWith("-")) ? "(0-1)*".concat(expression
-				.substring(1, expression.length())) : expression;
+		expression = (expression.startsWith("-")) ? "(0-1)*".concat(expression.substring(1, expression.length())) : expression;
 		expression = expression.replace("(-", "((0-1)*");
 	}
 
 	private void evalIfQueueHasContentAndSaveItAsToken() {
 		if (queue.toString().length() > 0) {
-			if(formerOperatorIsRightParentheses()){
+			if (formerOperatorIsRightParentheses()) {
 				addMultiplicatorToken();
 			}
-			
+
 			tokens.addToken(queue.toString());
 		}
 	}
-
 
 	private void validateExpression() {
 		expressionValidator.validate(expression);
@@ -124,13 +135,13 @@ public class LexicalTokenizer {
 	}
 
 	private void saveTokenFromActualChar() {
-		if(actualCharIsLeftParentheses() && formerTokenIsANumber()){
+		if (actualCharIsLeftParentheses() && formerTokenIsANumber()) {
 			addMultiplicatorToken();
 		}
-		
+
 		tokens.addToken(actualChar);
 	}
-	
+
 	private boolean formerTokenIsANumber() {
 		return OperatorUtils.isNumber(tokens.getLastToken());
 	}
@@ -138,7 +149,6 @@ public class LexicalTokenizer {
 	private boolean formerOperatorIsRightParentheses() {
 		return OperatorConstants.RIGHT_PARENTHESES.getSymbol().equals(tokens.getLastToken());
 	}
-
 
 	private boolean actualCharIsLeftParentheses() {
 		return OperatorConstants.LEFT_PARENTHESES.getSymbol().equals(actualChar);
@@ -157,8 +167,7 @@ public class LexicalTokenizer {
 	}
 
 	private boolean actualCharIsDecimalSeparator() {
-		return actualChar
-				.equalsIgnoreCase(OperatorConstants.DEFAULT_DECIMAL_SEPARATOR);
+		return actualChar.equalsIgnoreCase(OperatorConstants.DEFAULT_DECIMAL_SEPARATOR);
 	}
 
 	private boolean actualCharIsNumber() {
