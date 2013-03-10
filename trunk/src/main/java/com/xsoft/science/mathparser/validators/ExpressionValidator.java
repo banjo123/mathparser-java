@@ -1,5 +1,22 @@
 package com.xsoft.science.mathparser.validators;
 
+/*
+ MathParser Java - Cross Platform Mathematical Expressions Parser
+ Copyright 2013 Rodríguez Hernández, Daniel.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ */
+
 import com.xsoft.science.mathparser.constants.OperatorConstants;
 import com.xsoft.science.mathparser.constants.utils.MathParserUtils;
 import com.xsoft.science.mathparser.factories.Factories;
@@ -11,8 +28,7 @@ public class ExpressionValidator extends Validator {
 
 	private Object expressionObject;
 	private String expression;
-	private ExceptionFactory exceptionFactory = Factories
-			.getExceptionFactoryInstance();
+	private ExceptionFactory exceptionFactory = Factories.getExceptionFactoryInstance();
 
 	@Override
 	public void validate(Object value) {
@@ -29,14 +45,11 @@ public class ExpressionValidator extends Validator {
 		evalIfExpressionEndIsCorrect();
 	}
 
-
 	private void evalIfExpressionEndIsCorrect() {
 		String expressionChar = findFirstExpressionCharThatIsNotARightParenthesesFromTheEnding();
 		if (OperatorUtils.isAnOperator(expressionChar)) {
 			Operator operator = OperatorUtils.getOperator(expressionChar);
-			if (isMulOperator(operator) || isDivOperator(operator)
-					|| isPowOperator(operator) || isSubOperator(operator)
-					|| isAddOperator(operator)) {
+			if (isMulOperator(operator) || isDivOperator(operator)	|| isPowOperator(operator) || isSubOperator(operator) || isAddOperator(operator)) {
 				launchInvalidExpressionException();
 			}
 		}
@@ -49,13 +62,9 @@ public class ExpressionValidator extends Validator {
 		do {
 			expressionChar = String.valueOf(expressionArray[pointer]);
 			pointer -= 1;
-		} while (pointer >= 0
-				&& (expressionChar.equals("") || expressionChar.equals(")")));
+		} while (pointer >= 0 && (expressionChar.equals("") || expressionChar.equals(")")));
 
-		if (pointer < 0) {
-			expressionChar = "";
-		}
-
+		if (pointer < 0) { expressionChar = ""; }
 		return expressionChar;
 	}
 
@@ -71,8 +80,7 @@ public class ExpressionValidator extends Validator {
 		String firstChar = findFirstExpressionCharThatIsNotALeftParenthesesFromTheStart();
 		if (OperatorUtils.isAnOperator(firstChar)) {
 			Operator operator = OperatorUtils.getOperator(firstChar);
-			if (isMulOperator(operator) || isDivOperator(operator)
-					|| isPowOperator(operator)) {
+			if (isMulOperator(operator) || isDivOperator(operator) || isPowOperator(operator)) {
 				launchInvalidExpressionException();
 			}
 		}
@@ -85,13 +93,9 @@ public class ExpressionValidator extends Validator {
 		do {
 			expressionChar = String.valueOf(expressionArray[pointer]);
 			pointer += 1;
-		} while (pointer < expressionArray.length
-				&& (expressionChar.equals("") || expressionChar.equals("(")));
+		} while (pointer < expressionArray.length && (expressionChar.equals("") || expressionChar.equals("(")));
 
-		if (pointer == expressionArray.length) {
-			expressionChar = "";
-		}
-
+		if (pointer == expressionArray.length) { expressionChar = ""; }
 		return expressionChar;
 	}
 
@@ -108,8 +112,7 @@ public class ExpressionValidator extends Validator {
 	}
 
 	private void evalIfExpressionIsNullOrEmpty() {
-		if (expressionObject == null
-				|| expressionObject.toString().length() == 0) {
+		if (expressionObject == null || expressionObject.toString().length() == 0) {
 			launchInvalidExpressionException();
 		}
 	}
