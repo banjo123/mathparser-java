@@ -61,8 +61,10 @@ public class LexicalTokenizer {
 		transformGropCharsIntoParentheses();
 		addConversorsForPositiveModificators();
 		addConversorsForNegativeModificators();
+		removePositiveOperatorsExcedent();
 		this.lengthExpression = this.expression.length();
 	}
+
 
 	private void transformGropCharsIntoParentheses() {
 		this.expression = MathParserUtils.transformGropCharsIntoParentheses(this.expression);
@@ -87,15 +89,17 @@ public class LexicalTokenizer {
 		}
 		evalIfQueueHasContentAndSaveItAsToken();
 	}
+	
+	private void removePositiveOperatorsExcedent() {
+		expression = expression.replace("(+(", "((");
+	}
 
 	private void addConversorsForPositiveModificators() {
-		expression = (expression.startsWith("+")) ? "(0+1)*".concat(expression.substring(1, expression.length())) : expression;
-		expression = expression.replace("(+", "((0+1)*");
+		//Nothing to add
 	}
 
 	private void addConversorsForNegativeModificators() {
-		expression = (expression.startsWith("-")) ? "(0-1)*".concat(expression.substring(1, expression.length())) : expression;
-		expression = expression.replace("(-", "((0-1)*");
+		expression = expression.replace("-", "+(0-1)*");
 	}
 
 	private void evalIfQueueHasContentAndSaveItAsToken() {

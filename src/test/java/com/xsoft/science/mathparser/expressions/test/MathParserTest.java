@@ -190,5 +190,11 @@ public class MathParserTest {
 		result = mathParser.calculate("-2^2");
 		Assert.assertEquals(-4.0, result.doubleValue(), 0.0);
 	}
+	
+	@Test
+	public void calculation027() {
+		result = mathParser.calculate("5*2^4+4*2^2-6*2+4");
+		Assert.assertEquals(88.0, result.doubleValue(), 0.0);
+	}
 
 }
