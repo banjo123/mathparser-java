@@ -23,11 +23,10 @@ import com.xsoft.science.mathparser.operator.OperatorFactory;
 public class OperatorConstants {
 
 	public static final String DEFAULT_DECIMAL_SEPARATOR = ",";
+	public static final String DEFAULT_JAVA_DECIMAL_SEPARATOR = ".";
 
-	public static final Operator LEFT_PARENTHESES = OperatorFactory
-			.createLeftParentheses();
-	public static final Operator RIGHT_PARENTHESES = OperatorFactory
-			.createRightParentheses();
+	public static final Operator LEFT_PARENTHESES = OperatorFactory.createLeftParentheses();
+	public static final Operator RIGHT_PARENTHESES = OperatorFactory.createRightParentheses();
 	public static final Operator POW = OperatorFactory.createPowOperator();
 	public static final Operator MULT = OperatorFactory.createMulOperator();
 	public static final Operator DIV = OperatorFactory.createDivOperator();
