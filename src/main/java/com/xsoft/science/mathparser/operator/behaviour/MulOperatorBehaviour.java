@@ -3,6 +3,7 @@ package com.xsoft.science.mathparser.operator.behaviour;
 /*
  MathParser Java - Cross Platform Mathematical Expressions Parser
  Copyright 2013 Rodríguez Hernández, Daniel.
+ daniel.rguez.hdez[at]gmail.com
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -18,10 +19,7 @@ package com.xsoft.science.mathparser.operator.behaviour;
  */
 
 import com.xsoft.science.mathparser.factories.Factories;
-import com.xsoft.science.mathparser.operator.Operator;
 import com.xsoft.science.mathparser.operator.OperatorBehaviour;
-import com.xsoft.science.mathparser.operator.OperatorFactory;
-import com.xsoft.science.mathparser.operator.utils.OperatorUtils;
 import com.xsoft.science.mathparser.tokenStructure.TokenStack;
 import com.xsoft.science.mathparser.tokenStructure.TokenStructureFactory;
 
