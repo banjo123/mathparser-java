@@ -109,13 +109,13 @@ public class LexicalTokenizerTest {
 
 	@Test
 	public void testExpression09() {
-		String[] expected = { "(", "0", "-", "1", ")", "*", "2", "^", "2" };
+		String[] expected = {"+", "(", "0", "-", "1", ")", "*", "2", "^", "2" };
 		Assert.assertArrayEquals(expected, obtainOutputTokensByParserArray("-2^2"));
 	}
 
 	@Test
 	public void testExpression10() {
-		String[] expected = { "(", "0", "-", "1", ")", "*", "2", "^", "2" };
+		String[] expected = { "+","(", "0", "-", "1", ")", "*", "2", "^", "2" };
 		Assert.assertArrayEquals(expected, obtainOutputTokensByParserArray("-2 ^ 2"));
 	}
 }

@@ -153,7 +153,7 @@ public class Parser {
 	}
 
 	private void popOpToOutputIsPrecedenceIsLess() {
-		if (isLeftAssociativeAndPrecedenceLessOrEquals() || isPrecedenceLess()) {
+		while (operatorStack.hasMoreElements() && (isLeftAssociativeAndPrecedenceLessOrEquals() || isPrecedenceLess())) {
 			outputTokensQueue.addToken(operatorStack.pop());
 		}
 	}
