@@ -1,5 +1,22 @@
 package com.xsoft.science.mathparser.expressions.test;
 
+/*
+ MathParser Java - Cross Platform Mathematical Expressions Parser
+ Copyright 2013 Rodríguez Hernández, Daniel.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ */
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -7,13 +24,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.xsoft.science.mathparser.factories.Factories;
-import com.xsoft.science.mathparser.factories.exception.impl.InsufficientParametersException;
 import com.xsoft.science.mathparser.factories.exception.impl.InvalidCharacterException;
 import com.xsoft.science.mathparser.factories.exception.impl.InvalidExpressionException;
-import com.xsoft.science.mathparser.factories.parser.ParserFactory;
 import com.xsoft.science.mathparser.parser.LexicalTokenizer;
 import com.xsoft.science.mathparser.tokenStructure.TokenQueue;
-import com.xsoft.science.mathparser.tokenStructure.TokenStructureFactory;
 
 public class LexicalTokenizerTest {
 
@@ -27,7 +41,7 @@ public class LexicalTokenizerTest {
 		log.info(tokenGroup.toString());
 		return tokenGroup.size();
 	}
-	
+
 	private String[] obtainOutputTokensByParserArray(String expression) {
 		lexicalTokenizer.setExpression(expression);
 		tokenGroup = lexicalTokenizer.getTokens();
@@ -94,13 +108,13 @@ public class LexicalTokenizerTest {
 
 	@Test
 	public void testExpression09() {
-		String[] expected = {"(","0","-","1",")","*","2","^","2"};
+		String[] expected = { "(", "0", "-", "1", ")", "*", "2", "^", "2" };
 		Assert.assertArrayEquals(expected, obtainOutputTokensByParserArray("-2^2"));
 	}
 
 	@Test
 	public void testExpression10() {
-		String[] expected = {"(","0","-","1",")","*","2","^","2"};
+		String[] expected = { "(", "0", "-", "1", ")", "*", "2", "^", "2" };
 		Assert.assertArrayEquals(expected, obtainOutputTokensByParserArray("-2 ^ 2"));
 	}
 }
