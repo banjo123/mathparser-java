@@ -5,7 +5,7 @@ package com.google.code.mathparser.constants;
  Copyright 2013 Rodríguez Hernández, Daniel.
  daniel.rguez.hdez[at]gmail.com
 
- Licensed under the Apache License, Version 2.0 (the "License");
+ Licensed under the Apache License, Version 2.0 [the "License"]
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
 
@@ -18,7 +18,7 @@ package com.google.code.mathparser.constants;
  limitations under the License.
  */
 
-public class ErrorMessage {
+public final class ErrorMessage {
 	
 	public static final String MISMATCHED_PARENTHESES = "Mismatched parentheses";
 	public static final String NULL_OR_EMPTY_EXPRESSION = "NULL or Empty Expression is not valid";
@@ -26,5 +26,7 @@ public class ErrorMessage {
 	public static final String INVALID_OPERATOR = "Operator invalid";
 	public static final String INSUFFICIENT_PARAMETERS = "Insufficient parameters to apply (%OPERATOR%) operator. Expected (%EXPECTED%) arguments. Found (%FOUND%) arguments";
 	public static final String TOO_MANY_VALUES = "The user inputs has too many values";
+	
+	private ErrorMessage(){};
 	
 }

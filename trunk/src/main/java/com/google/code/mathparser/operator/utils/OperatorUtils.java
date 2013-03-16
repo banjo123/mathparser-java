@@ -5,7 +5,7 @@ package com.google.code.mathparser.operator.utils;
  Copyright 2013 Rodríguez Hernández, Daniel.
  daniel.rguez.hdez[at]gmail.com
 
- Licensed under the Apache License, Version 2.0 (the "License");
+ Licensed under the Apache License, Version 2.0 [the "License"]
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
 
@@ -21,16 +21,18 @@ package com.google.code.mathparser.operator.utils;
 import java.util.Arrays;
 
 import com.google.code.mathparser.constants.OperatorConstants;
-import com.google.code.mathparser.factories.Factories;
+import com.google.code.mathparser.factories.impl.Factories;
 import com.google.code.mathparser.operator.Operator;
 import com.google.code.mathparser.operator.OperatorAssociativity;
 
 public final class OperatorUtils {
+	
+	private OperatorUtils(){};
 
 	public static Operator getOperator(String operator) {
 		try {
-			int index = Arrays.asList(OperatorConstants.validOperatorsSymbols).indexOf(operator);
-			return OperatorConstants.validOperators[index];
+			int index = Arrays.asList(OperatorConstants.VALID_OPERATORS_SYMBOLS).indexOf(operator);
+			return OperatorConstants.VALID_OPERATORS[index];
 		} catch (IndexOutOfBoundsException e) {
 			Factories.getExceptionFactoryInstance().launchInvalidOperatorException();
 			return null;
@@ -38,15 +40,15 @@ public final class OperatorUtils {
 	}
 
 	public static boolean isAnValidSymbol(String candidate) {
-		return Arrays.asList(OperatorConstants.validOperatorsSymbols).indexOf(candidate) != -1;
+		return Arrays.asList(OperatorConstants.VALID_OPERATORS_SYMBOLS).indexOf(candidate) != -1;
 	}
 
 	public static boolean isAParentheses(String candidate) {
-		return Arrays.asList(OperatorConstants.parenthesesSymbols).indexOf(candidate) != -1;
+		return Arrays.asList(OperatorConstants.PARENTHESES_SYMBOLS).indexOf(candidate) != -1;
 	}
 
 	public static boolean isAnOperator(String candidate) {
-		return Arrays.asList(OperatorConstants.validOperatorsSymbols).indexOf(candidate) != -1;
+		return Arrays.asList(OperatorConstants.VALID_OPERATORS_SYMBOLS).indexOf(candidate) != -1;
 	}
 
 	public static boolean isLeftAssociativity(String operator) {

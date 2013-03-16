@@ -5,7 +5,7 @@ package com.google.code.mathparser.impl;
  Copyright 2013 Rodríguez Hernández, Daniel.
  daniel.rguez.hdez[at]gmail.com
 
- Licensed under the Apache License, Version 2.0 (the "License");
+ Licensed under the Apache License, Version 2.0 [the "License"]
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
 
@@ -19,7 +19,7 @@ package com.google.code.mathparser.impl;
  */
 
 import com.google.code.mathparser.MathParser;
-import com.google.code.mathparser.factories.Factories;
+import com.google.code.mathparser.factories.impl.Factories;
 import com.google.code.mathparser.parser.Parser;
 import com.google.code.mathparser.parser.calculation.RPNCalculator;
 import com.google.code.mathparser.parser.calculation.Result;
@@ -28,13 +28,11 @@ public class MathParserImpl implements MathParser {
 
 	private RPNCalculator rpnCalculator = Factories.getCalculatorFactoryInstance().createRPNCalculator();
 	private Parser parser = Factories.getParserFactoryInstance().createParser();
-	private Result result = Factories.getCalculatorFactoryInstance().createResult();
-
+	
 	public Result calculate(String expression) {
 		parser.setExpression(expression);
 		rpnCalculator.setRPNExpression(parser.getOutputTokensQueue());
-		result = rpnCalculator.calculate();
-		return result;
+		return rpnCalculator.calculate();
 	}
 
 }

@@ -1,11 +1,11 @@
-package com.google.code.mathparser.factories;
+package com.google.code.mathparser.factories.impl;
 
 /*
  MathParser Java - Cross Platform Mathematical Expressions Parser
  Copyright 2013 Rodríguez Hernández, Daniel.
  daniel.rguez.hdez[at]gmail.com
 
- Licensed under the Apache License, Version 2.0 (the "License");
+ Licensed under the Apache License, Version 2.0 [the "License"]
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
 
@@ -19,15 +19,13 @@ package com.google.code.mathparser.factories;
  */
 
 import com.google.code.mathparser.factories.calculator.CalculatorFactory;
-import com.google.code.mathparser.factories.calculator.impl.CalculatorFactoryImpl;
 import com.google.code.mathparser.factories.exception.ExceptionFactory;
 import com.google.code.mathparser.factories.exception.impl.ExceptionFactoryImpl;
 import com.google.code.mathparser.factories.exception.messages.ExceptionMessageFactory;
-import com.google.code.mathparser.factories.exception.messages.impl.ExceptionMessageFactoryImpl;
 import com.google.code.mathparser.factories.parser.ParserFactory;
-import com.google.code.mathparser.factories.parser.impl.ParserFactoryImpl;
 
-public class Factories {
+public final class Factories {
+	
 
 	private static ParserFactory parserFactoryInstance;
 	private static CalculatorFactory calculatorFactoryInstance;
@@ -40,6 +38,8 @@ public class Factories {
 		exceptionMessageFactoryInstance = new ExceptionMessageFactoryImpl();
 		exceptionFactoryInstance = new ExceptionFactoryImpl();
 	}
+	
+	private Factories(){};
 
 	public static ParserFactory getParserFactoryInstance() {
 		return parserFactoryInstance;

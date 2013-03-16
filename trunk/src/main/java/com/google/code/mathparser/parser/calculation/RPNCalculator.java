@@ -5,7 +5,7 @@ package com.google.code.mathparser.parser.calculation;
  Copyright 2013 Rodríguez Hernández, Daniel.
  daniel.rguez.hdez[at]gmail.com
 
- Licensed under the Apache License, Version 2.0 (the "License");
+ Licensed under the Apache License, Version 2.0 [the "License"]
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
 
@@ -22,7 +22,7 @@ import com.google.code.mathparser.tokenStructure.TokenQueue;
 
 public interface RPNCalculator {
 
-	public void setRPNExpression(TokenQueue expression);
+	void setRPNExpression(TokenQueue expression);
 
-	public Result calculate();
+	Result calculate();
 }

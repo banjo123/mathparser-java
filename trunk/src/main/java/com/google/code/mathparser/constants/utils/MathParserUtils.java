@@ -7,7 +7,7 @@ import com.google.code.mathparser.constants.OperatorConstants;
  Copyright 2013 Rodríguez Hernández, Daniel.
   daniel.rguez.hdez[at]gmail.com
 
- Licensed under the Apache License, Version 2.0 (the "License");
+ Licensed under the Apache License, Version 2.0 [the "License"]
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
 
@@ -20,7 +20,9 @@ import com.google.code.mathparser.constants.OperatorConstants;
  limitations under the License.
  */
 
-public class MathParserUtils {
+public final class MathParserUtils {
+	
+	private MathParserUtils(){};
 	
 	public static boolean tokenIsNumber(String token) {
 		try {
@@ -32,10 +34,11 @@ public class MathParserUtils {
 	}
 
 	public static String transformGropCharsIntoParentheses(String expression) {
-		expression = expression.replaceAll("\\[", "(");
-		expression = expression.replaceAll("]", ")");
-		expression = expression.replaceAll("\\{", "(");
-		expression = expression.replaceAll("}", ")");
-		return expression;
+		String expressionToReturn = expression;
+		expressionToReturn = expressionToReturn.replaceAll("\\[", "(");
+		expressionToReturn = expressionToReturn.replaceAll("]", ")");
+		expressionToReturn = expressionToReturn.replaceAll("\\{", "(");
+		expressionToReturn = expressionToReturn.replaceAll("}", ")");
+		return expressionToReturn;
 	}
 }
