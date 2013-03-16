@@ -24,9 +24,9 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.code.mathparser.factories.Factories;
 import com.google.code.mathparser.factories.exception.impl.InvalidCharacterException;
 import com.google.code.mathparser.factories.exception.impl.InvalidExpressionException;
+import com.google.code.mathparser.factories.impl.Factories;
 import com.google.code.mathparser.parser.Parser;
 import com.google.code.mathparser.parser.calculation.RPNCalculator;
 import com.google.code.mathparser.parser.calculation.Result;

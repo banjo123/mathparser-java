@@ -1,11 +1,11 @@
-package com.google.code.mathparser.operator;
+package com.google.code.mathparser.operator.behaviour;
 
 /*
  MathParser Java - Cross Platform Mathematical Expressions Parser
  Copyright 2013 Rodríguez Hernández, Daniel.
  daniel.rguez.hdez[at]gmail.com
 
- Licensed under the Apache License, Version 2.0 (the "License");
+ Licensed under the Apache License, Version 2.0 [the "License"]
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
 
@@ -18,14 +18,11 @@ package com.google.code.mathparser.operator;
  limitations under the License.
  */
 
-import com.google.code.mathparser.operator.behaviour.AddOperatorBehaviour;
-import com.google.code.mathparser.operator.behaviour.DivOperatorBehaviour;
-import com.google.code.mathparser.operator.behaviour.MulOperatorBehaviour;
-import com.google.code.mathparser.operator.behaviour.NoOperatorBehaviour;
-import com.google.code.mathparser.operator.behaviour.PowOperatorBehaviour;
-import com.google.code.mathparser.operator.behaviour.SubsOperatorBehaviour;
+import com.google.code.mathparser.operator.OperatorBehaviour;
 
-public class OperatorBehaviourFactory {
+public final class OperatorBehaviourFactory {
+	
+	private OperatorBehaviourFactory(){};
 
 	public static OperatorBehaviour createAddBehaviour(String symbol, int neededArguments) {
 		return new AddOperatorBehaviour(symbol, neededArguments);

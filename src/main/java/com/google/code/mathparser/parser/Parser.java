@@ -5,7 +5,7 @@ package com.google.code.mathparser.parser;
  Copyright 2013 Rodríguez Hernández, Daniel.
  daniel.rguez.hdez[at]gmail.com
 
- Licensed under the Apache License, Version 2.0 (the "License");
+ Licensed under the Apache License, Version 2.0 [the "License"]
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
 
@@ -20,8 +20,8 @@ package com.google.code.mathparser.parser;
 
 import com.google.code.mathparser.constants.OperatorConstants;
 import com.google.code.mathparser.constants.utils.MathParserUtils;
-import com.google.code.mathparser.factories.Factories;
 import com.google.code.mathparser.factories.exception.ExceptionFactory;
+import com.google.code.mathparser.factories.impl.Factories;
 import com.google.code.mathparser.factories.parser.ParserFactory;
 import com.google.code.mathparser.operator.utils.OperatorUtils;
 import com.google.code.mathparser.tokenStructure.TokenQueue;
@@ -71,9 +71,9 @@ public class Parser {
 			readToken();
 			if (tokenIsNumber()) {
 				addTokenToOutputQueue();
-			} else if (tokenIsFunction()) {
+			/*} else if (tokenIsFunction()) {
 				//TODO V1.1.0
-			} else if (tokenIsArgumentSeparator()) {
+			} else if (tokenIsArgumentSeparator()) {*/
 				//TODO V1.1.0
 			} else if (tokenIsLeftParentheses()) {
 				pushActualOpToOperatorsStack();
@@ -160,8 +160,7 @@ public class Parser {
 
 	private boolean isPrecedenceLess() {
 		int comparation = OperatorUtils.comparePrecedence(actualToken, operatorStack.getTop());
-		boolean precedenceLess = comparation < 0;
-		return precedenceLess;
+		return comparation < 0;
 	}
 
 	private boolean isLeftAssociativeAndPrecedenceLessOrEquals() {

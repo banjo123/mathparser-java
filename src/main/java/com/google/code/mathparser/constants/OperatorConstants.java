@@ -5,7 +5,7 @@ package com.google.code.mathparser.constants;
  Copyright 2013 Rodríguez Hernández, Daniel.
  daniel.rguez.hdez[at]gmail.com
 
- Licensed under the Apache License, Version 2.0 (the "License");
+ Licensed under the Apache License, Version 2.0 [the "License"]
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
 
@@ -34,15 +34,17 @@ public class OperatorConstants {
 	public static final Operator ADD = OperatorFactory.createAddOperator();
 	public static final Operator SUBS = OperatorFactory.createSubsOperator();
 
-	public static final String[] validOperatorsSymbols = {
+	public static final String[] VALID_OPERATORS_SYMBOLS = {
 			LEFT_PARENTHESES.getSymbol(), RIGHT_PARENTHESES.getSymbol(),
 			POW.getSymbol(), MULT.getSymbol(), DIV.getSymbol(),
 			ADD.getSymbol(), SUBS.getSymbol(), DEFAULT_DECIMAL_SEPARATOR };
 
-	public static final Operator[] validOperators = { LEFT_PARENTHESES,
+	public static final Operator[] VALID_OPERATORS = { LEFT_PARENTHESES,
 			RIGHT_PARENTHESES, POW, MULT, DIV, ADD, SUBS };
 
-	public static final String[] parenthesesSymbols = {
+	public static final String[] PARENTHESES_SYMBOLS = {
 			LEFT_PARENTHESES.getSymbol(), RIGHT_PARENTHESES.getSymbol() };
+	
+	OperatorConstants(){};
 
 }

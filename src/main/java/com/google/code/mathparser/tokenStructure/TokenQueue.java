@@ -5,7 +5,7 @@ package com.google.code.mathparser.tokenStructure;
  Copyright 2013 Rodríguez Hernández, Daniel.
  daniel.rguez.hdez[at]gmail.com
 
- Licensed under the Apache License, Version 2.0 (the "License");
+ Licensed under the Apache License, Version 2.0 [the "License"]
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
 
@@ -22,19 +22,19 @@ import java.util.List;
 
 public interface TokenQueue {
 
-	public List<String> getTokens();
+	List<String> getTokens();
 
-	public void addToken(String token);
+	void addToken(String token);
 
-	public int size();
+	int size();
 
-	public String toString();
+	String toString();
 
-	public String toExpressionString();
+	String toExpressionString();
 
-	public String getTokenAt(int pointer);
+	String getTokenAt(int pointer);
 
-	public boolean hasMoreTokens();
+	boolean hasMoreTokens();
 
-	public String getLastToken();
+	String getLastToken();
 }

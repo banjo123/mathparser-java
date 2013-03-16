@@ -1,11 +1,11 @@
-package com.google.code.mathparser.factories.parser.impl;
+package com.google.code.mathparser.factories.impl;
 
 /*
  MathParser Java - Cross Platform Mathematical Expressions Parser
  Copyright 2013 Rodríguez Hernández, Daniel.
  daniel.rguez.hdez[at]gmail.com
 
- Licensed under the Apache License, Version 2.0 (the "License");
+ Licensed under the Apache License, Version 2.0 [the "License"]
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
 
@@ -23,6 +23,9 @@ import com.google.code.mathparser.parser.LexicalTokenizer;
 import com.google.code.mathparser.parser.Parser;
 
 public class ParserFactoryImpl implements ParserFactory {
+	
+	ParserFactoryImpl(){};
+	
 	public LexicalTokenizer createLexicalTokenizer() {
 		return new LexicalTokenizer();
 	}

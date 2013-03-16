@@ -5,7 +5,7 @@ package com.google.code.mathparser.factories.exception;
  Copyright 2013 Rodríguez Hernández, Daniel.
  daniel.rguez.hdez[at]gmail.com
 
- Licensed under the Apache License, Version 2.0 (the "License");
+ Licensed under the Apache License, Version 2.0 [the "License"]
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
 
@@ -19,15 +19,15 @@ package com.google.code.mathparser.factories.exception;
  */
 
 public interface ExceptionFactory {
-	public void launchInsufficientParamtersException(String operator, int expectedArguments, int foundArguments);
+	void launchInsufficientParamtersException(String operator, int expectedArguments, int foundArguments);
 
-	public void launchInvalidCharacterException(String invalidCharacter);
+	void launchInvalidCharacterException(String invalidCharacter);
 
-	public void launchInvalidExpressionException();
+	void launchInvalidExpressionException();
 
-	public void launchInvalidOperatorException();
+	void launchInvalidOperatorException();
 
-	public void launchMismatchedParenthesesException();
+	void launchMismatchedParenthesesException();
 
-	public void launchTooManyValuesException();
+	void launchTooManyValuesException();
 }

@@ -1,11 +1,11 @@
-package com.google.code.mathparser.factories.exception.messages.impl;
+package com.google.code.mathparser.factories.impl;
 
 /*
  MathParser Java - Cross Platform Mathematical Expressions Parser
  Copyright 2013 Rodríguez Hernández, Daniel.
  daniel.rguez.hdez[at]gmail.com
 
- Licensed under the Apache License, Version 2.0 (the "License");
+ Licensed under the Apache License, Version 2.0 [the "License"]
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
 
@@ -22,6 +22,8 @@ import com.google.code.mathparser.constants.ErrorMessage;
 import com.google.code.mathparser.factories.exception.messages.ExceptionMessageFactory;
 
 public class ExceptionMessageFactoryImpl implements ExceptionMessageFactory {
+	
+	ExceptionMessageFactoryImpl(){};
 
 	public String createInsufficientParametersMessage(String operator, int numberExpectedArguments, int numberFoundArguments) {
 		String message = ErrorMessage.INSUFFICIENT_PARAMETERS;

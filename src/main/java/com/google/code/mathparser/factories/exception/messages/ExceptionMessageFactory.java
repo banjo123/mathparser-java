@@ -5,7 +5,7 @@ package com.google.code.mathparser.factories.exception.messages;
  Copyright 2013 Rodríguez Hernández, Daniel.
  daniel.rguez.hdez[at]gmail.com
 
- Licensed under the Apache License, Version 2.0 (the "License");
+ Licensed under the Apache License, Version 2.0 [the "License"]
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
 
@@ -20,16 +20,16 @@ package com.google.code.mathparser.factories.exception.messages;
 
 public interface ExceptionMessageFactory {
 	
-	public String createInsufficientParametersMessage(String operator, int numberExpectedArguments, int numberFoundArguments);
+	String createInsufficientParametersMessage(String operator, int numberExpectedArguments, int numberFoundArguments);
 
-	public String createInvalidCharacterMessage(String invalidCharacter);
+	String createInvalidCharacterMessage(String invalidCharacter);
 
-	public String createInvalidExpressionMessage();
+	String createInvalidExpressionMessage();
 
-	public String createInvalidOperatorMessage();
+	String createInvalidOperatorMessage();
 
-	public String createMismatchedParenthesesMessage();
+	String createMismatchedParenthesesMessage();
 
-	public String createTooManyValuesMessage();
+	String createTooManyValuesMessage();
 
 }
