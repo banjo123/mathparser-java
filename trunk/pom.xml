@@ -9,7 +9,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.google.code.mathparser-java</groupId>
 	<artifactId>mathparser-java</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>Mathematical Parser For Java</name>
 	<description>MathParser Java is a cross platform math parser library written in Java</description>
@@ -109,9 +109,9 @@
 	</profiles>
 
 	<scm>
-		<url>https://mathparser-java.googlecode.com/svn/tags/mathparser-java-1.0.0</url>
-		<connection>scm:svn:https://mathparser-java.googlecode.com/svn/tags/mathparser-java-1.0.0</connection>
-		<developerConnection>scm:svn:https://mathparser-java.googlecode.com/svn/tags/mathparser-java-1.0.0</developerConnection>
+		<url>https://mathparser-java.googlecode.com/svn/trunk</url>
+		<connection>scm:svn:https://mathparser-java.googlecode.com/svn/trunk</connection>
+		<developerConnection>scm:svn:https://mathparser-java.googlecode.com/svn/trunk</developerConnection>
 	</scm>
 
 	<developers>
