@@ -115,6 +115,13 @@
 		<developerConnection>scm:svn:https://mathparser-java.googlecode.com/svn/trunk</developerConnection>
 	</scm>
 
+	<distributionManagement>
+		<repository>
+			<id>sonatype</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+		</repository>
+	</distributionManagement>
+
 	<developers>
 		<developer>
 			<id>danirh</id>
