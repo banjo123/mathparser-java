@@ -12,7 +12,13 @@ MathParser-java is a cross platform mathematical parser library written in Java.
 
 ===Dependency===
 
-_Under construction_
+{{{
+<dependency>
+  <groupId>com.google.code.mathparser-java</groupId>
+  <artifactId>mathparser-java</artifactId>
+  <version>1.0.0</version>
+</dependency>
+}}}
 
 ===Usage===
 
